@@ -1,25 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import ProductDetails from './components/team3/ProductDetails';
 
 function App() {
+
+  const queryParams = new URLSearchParams(window.location.search)
+  const prodId = queryParams.get("id")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ProductDetails productId={prodId}/>
     </div>
   );
 }
 
 export default App;
+ 

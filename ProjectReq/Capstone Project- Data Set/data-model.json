@@ -1,0 +1,212 @@
+{
+    "products": [
+        {
+            "id": "Integer",
+            "title": "String",
+            "retailPrice": "Double",
+            "minQty": "Integer",
+            "shortDescription": "String",
+            "longDescription": "String",
+            "productCategory": "String",
+            "inventoryStatus": "String -- AVAILABLE / UNAVAILABLE",
+            "availableQty": "Integer",
+            "purchasable": "String -- Yes/No",
+            "balance": "Integer",
+            "searchTags": [
+                "String",
+                "String",
+                "String",
+                "String",
+                "String"
+            ],
+            "model": "String",
+            "brand": "String",
+            "spcification": "String",
+            "warrantyDuration": "Integer  -- in years",
+            "iconUrl": "image Link",
+            "imageUrls": [
+                "image Link",
+                "image Link",
+                "image Link",
+                "image Link"
+            ],
+            "orderLimit": "Integer",
+            "returnDays": "Integer",
+            "length": "Decimal",
+            "width": "Decimal",
+            "height": "Decimal",
+            "weight": "Decimal",
+            "ratings": {
+                "averageRatings": "Decimal",
+                "numberOfReviews": "Integer",
+                "comments": [
+                    {
+                        "user": {
+                            "userId": "String",
+                            "comment": "String",
+                            "rate": "Integer"
+                        }
+                    },
+                    {
+                        "user": {
+                            "userId": "String",
+                            "comment": "String",
+                            "rate": "Integer"
+                        }
+                    }
+                ]
+            },
+            "isElegibileForPromotion": "Boolean",
+            "discount": "Decimal",
+            "isHazardous": "String -- Yes/No",
+            "isReturnable": "String -- Yes/No",
+            "isPerishable": "String -- Yes/No"
+        }
+    ],
+    "users": [
+        {
+            "id": "Integer",
+            "email": "String",
+            "password": "String-Hashed",
+            "avtar": "string pic link",
+            "validated": "YES/NO - Default",
+            "interests": [
+                "String",
+                "String"
+            ],
+            "name": {
+                "firstName": "String",
+                "lastnName": "String"
+            },
+            "gender": "Male/Female",
+            "role": [
+                "user-String",
+                "admin-String"
+            ],
+            "securityQuestion": [
+                {
+                    "question": "String",
+                    "answer": "String"
+                },
+                {
+                    "question": "String",
+                    "answer": "String"
+                }
+            ],
+            "phone": "String",
+            "address": {
+                "geolocation": {
+                    "lat": "Decimal",
+                    "long": "Decimal"
+                },
+                "city": "String",
+                "street": "String",
+                "number": "Integer",
+                "zipcode": "String"
+            },
+            "favoriteCategories": [
+                "String",
+                "String"
+            ],
+            "recentSearches": [
+                "String",
+                "String",
+                "String"
+            ]
+        }
+    ],
+    "cart": [
+        {
+            "cartId": "Integer",
+            "userId": "Integer",
+            "date": "Date-Time",
+            "promoCode": "String",
+            "amount": "Decimal",
+            "products": [
+                {
+                    "productId": "Integer",
+                    "quantity": "Integer"
+                },
+                {
+                    "productId": "Integer",
+                    "quantity": "Integer"
+                }
+            ]
+        }
+    ],
+    "shippingDelivery": [
+        {
+            "shippngCart": {
+                "shippingId": "Integer",
+                "cartId": "Integer",
+                "typeOfShipping": "String",
+                "destinationOfShipping": "String",
+                "shippingCost": "Decimal",
+                "deliveryDuration": "Integer"
+            }
+        }
+    ],
+    "wishList": [
+        {
+            "wishListId": "Integer",
+            "userId": "Integer",
+            "products": [
+                {
+                    "productId": "Integer",
+                    "inventoryStatus": "String"
+                },
+                {
+                    "productId": "Integer",
+                    "inventoryStatus": "String"
+                }
+            ]
+        }
+    ],
+    "promotions": [
+        {
+            "promotionId": "String",
+            "promotionDesription": "String",
+            "promotionType": "String -  //// based on cart value ",
+            "startDate": "Date",
+            "endDate": "Date",
+            "status": "String -- Active/Inactive",
+            "valueChange": "-ve Number Only",
+            "noOfPromo": "Integer"
+        },
+        {
+            "promocode": "String",
+            "promotionType": "String - // first time customer",
+            "startDate": "Date",
+            "endDate": "Date"
+        }
+    ],
+    "usersHistory": [
+        {
+            "users": [
+                {
+                    "userId": "Integer/Email",
+                    "purchaseHistory": [
+                        {
+                            "cartId": "Integer",
+                            "cartCost": "Decimal",
+                            "dateOfDelivery": "String",
+                            "successfullyDeliered": "Boolean"
+                        },
+                        {
+                            "cartId": "Integer",
+                            "cartCost": "Decimal",
+                            "dateOfDelivery": "String",
+                            "successfullyDeliered": "Boolean"
+                        },
+                        {
+                            "cartId": "Integer",
+                            "cartCost": "Decimal",
+                            "dateOfDelivery": "String",
+                            "successfullyDeliered": "Boolean"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

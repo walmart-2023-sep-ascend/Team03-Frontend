@@ -1,0 +1,5 @@
+npm install --save react-magic-slider-dots
+npm install slick-carousel
+npm install react-slick --save
+
+npm install axios
