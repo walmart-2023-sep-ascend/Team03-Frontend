@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
- 
-import MagicSliderDots from 'react-magic-slider-dots';
-import 'react-magic-slider-dots/dist/magic-dots.css';
 import ProductImage from '../ProductImage';
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
  
 class Imgslider extends Component {
 
@@ -17,10 +13,12 @@ class Imgslider extends Component {
   createImg=()=>{
     
     let imgCount=this.props.images.length;
-    console.log("IMG CNT "+imgCount);
+   // console.log("IMG CNT "+imgCount);
     let imgItems = []
     for (let i = 0; i < imgCount; i++) {
-      imgItems.push(<ProductImage image={this.props.images[i]} key={i} />)
+      //imgItems.push(<ProductImage image={this.props.images[i]} key={i} />)
+      
+      imgItems.push({"image":this.props.images[i]});
     }
 
     console.log({imgItems})
@@ -30,7 +28,7 @@ class Imgslider extends Component {
 
 
   render() {
-    let imgCount=this.props.images.length;
+  /*  let imgCount=this.props.images.length;
     const settings = {
       dots: true,
       arrows: true,
@@ -41,18 +39,26 @@ class Imgslider extends Component {
       appendDots: dots => {
         return <MagicSliderDots dots={dots} numDotsToShow={imgCount} dotWidth={30} />;
       }
-    }; 
+    }; */
  
 
 
 
     return (
-      <Slider {...settings}>
+  /*    <Slider {...settings}>
 
           
          {this.createImg()}
         
-      </Slider>
+      </Slider>*/
+
+      <Carousel useKeyboardArrows={true}>
+      {this.props.images.map((URL, index) => (
+        <div className="slide">
+          <img alt="sample_file" src={URL} key={index} />
+        </div>
+      ))}
+    </Carousel>
     )
   }
 }

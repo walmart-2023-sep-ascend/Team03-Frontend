@@ -2,7 +2,6 @@ import React from "react"
 import axios from 'axios';
 import { useState,useEffect } from 'react';
 import "./css/AddCart.css"
-import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 function AddCart(props){
 
