@@ -12,3 +12,29 @@ Application can be accessed using below url. Product id is passed as query param
 http://localhost:3000?id=1
 
 The api service should be running in localhost:8080.
+
+
+
+docker pull arunsreekantan/ecart-prodpage:v3
+
+docker tag ecart-prodpage:v3 arunsreekantan/ecart-prodpage:v3
+
+docker push arunsreekantan/ecart-prodpage:v3
+
+sudo docker run -d -p3000:3000 --name ecart3 arunsreekantan/ecart-prodpage:v3
+
+
+
+sudo docker run -d -p 9200:8080 harshinisuresh/pdpapplication .
+
+
+sudo docker ps
+
+sudo docker stop 597d3f557a55
+
+
+http://proddetails.eastus.cloudapp.azure.com:3000/?id=1
+
+http://proddetails.eastus.cloudapp.azure.com:3000/?id=16#
+
+http://proddetails.eastus.cloudapp.azure.com:3000/?id=18
