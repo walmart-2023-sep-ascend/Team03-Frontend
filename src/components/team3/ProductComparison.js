@@ -37,13 +37,15 @@ function ProductComparison(props){
         console.log("Going to call related Products "+relatedProds);
       //  const resp = await axios.get(`https://api.npoint.io/ce39eb17c36a0f1ed9e5?category=`+category);
         try{
-        const resp = await axios.get(`http://localhost:8080/api/products/getByText/`+category);
-        const  data = resp.data;
+      //  const resp = await axios.get(`http://localhost:8080/api/products/getByText/`+category);
+      const resp = await axios.get(`http://proddetails.eastus.cloudapp.azure.com:9200/api/products/getByText/`+category);  
+      
+      const  data = resp.data;
         
         const filteredData = data.filter((item) => item.id !== props.currProd.id);
 
         setRelatedProds( filteredData);
-        console.log("Rltd PRODUCTS "+data[0].brand);
+    //  console.log("Rltd PRODUCTS "+data[0].brand);
         setIsProdCompLoaded(true);
         }
         catch(error){
