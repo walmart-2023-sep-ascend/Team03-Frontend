@@ -1,0 +1,14 @@
+Docker Build Cmd
+================
+docker image build -t ecart-prodpage:v1 .
+
+Docker Run Cmd
+================
+docker run -p3000:3000 --name ecart ecart-prodpage:v1 
+
+
+Application can be accessed using below url. Product id is passed as query param - id.
+
+http://localhost:3000?id=1
+
+The api service should be running in localhost:8080.
