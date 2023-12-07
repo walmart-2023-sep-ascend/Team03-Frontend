@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Product from './Product';
+import noProdImg from './image/404.png'
 class ProductDetails extends React.Component {
 	state = {
 		isLoading1: true,
@@ -19,11 +20,6 @@ class ProductDetails extends React.Component {
 
 		this.getCart();
 		this.getProductDetails(); 
-			
-
-/*  			this.setState({isLoading: true, product:{}} , ()=>{
-				this.getProductDetails();
-				this.getCart();});  */
 
 	}
 
@@ -34,8 +30,6 @@ class ProductDetails extends React.Component {
     constructor(props){
         super(props)
         this.props=props;
-		//const [product, setProduct] = React.useState(null);
-		//this.setState({productId: this.props.productId})
 		this.state = {
 			isLoading1: true,
 			isLoading2: true,
@@ -54,8 +48,8 @@ class ProductDetails extends React.Component {
 				
 				let productData={}
 			
-			//	await axios.get(`http://localhost:8080/api/products/getByID/`+this.state.productId)
-			await axios.get(`http://proddetails.eastus.cloudapp.azure.com:9200/api/products/getByID/`+this.state.productId)
+				//await axios.get(`http://localhost:8080/api/products/getByID/`+this.state.productId)
+				await axios.get(`http://proddetails.eastus.cloudapp.azure.com:9200/api/products/getByID/`+this.state.productId)
 			.then(response => {
 					 productData = response.data.data;
 					console.log("Product is "+productData);
@@ -90,18 +84,16 @@ class ProductDetails extends React.Component {
 	}
 
 	handleCount=()=>{ 
-		//console.log("STATE COUNT "+this.state.stateCount);
 		this.getCart();
 		this.setState({stateCount:this.state.stateCount+1}); 
 	} 
 	
 	changeProdId=(newProdId)=>{
-		console.log("Old Prod Id "+this.state.productId)
-		console.log("New Prod Id "+newProdId)
+		//console.log("Old Prod Id "+this.state.productId)
+		//console.log("New Prod Id "+newProdId)
 		this.setState({productId:newProdId, isLoading1: true,isLoading2:true, product:{}} , ()=>{
 			this.getProductDetails();
 			this.getCart();});
-		
 	}
 
 
@@ -111,17 +103,22 @@ class ProductDetails extends React.Component {
 			return <p>An error occurred: {this.state.error.message}</p>;
 		}
 
+		
 		const prod=this.state.product;
 		const cart = this.state.cart;
-		console.log("State is "+prod.title);
-		console.log("ISLoading is "+this.state.isLoading1);
 
-		
+		if(prod!=null){
 
 		return (
 			(this.state.isLoading2 || this.state.isLoading1) ?"" : <Product product={prod} cart={cart} handleCount={this.handleCount} changeProd={this.changeProdId}/>
 
-)}
+)
+		}
+		else
+		{
+			return <img src={noProdImg}   alt="No Product Found"/>
+		}
+}
 }
 
 

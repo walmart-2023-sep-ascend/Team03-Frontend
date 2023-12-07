@@ -27,19 +27,24 @@ return (
 <div className="title">
 <ProductTitle  title={props.product.title} productCategory={props.product.productCategory} prodName={props.product.productName}/>
 </div>
-<div className="descriptionDiv">
-<ProductDescription  desc={props.product.longDescription}/>
-</div>
 <div  className="title">
 
 {props.product.inventryStatus==="AVAILABLE"?
 <ProductPrice hideLabel={false} price={props.product.retailPrice} discount={props.product.discount} discountedPrice={props.product.discountedPrice} />
 : <h4 style={{color:"red"}}>Currently not in stock!</h4>}
 </div>
+<div className="descriptionDiv">
+<ProductDescription  desc={props.product.longDescription}/>
+</div>
+
+
+<AddCart  prodId={props.product.id} cart={props.cart} handleCount={props.handleCount} disableButton={props.product.inventryStatus==="AVAILABLE"?false:true}/>
+
+
 </div> 
 
 <div className="addCartDiv">
-<AddCart  prodId={props.product.id} cart={props.cart} handleCount={props.handleCount} disableButton={props.product.inventryStatus==="AVAILABLE"?false:true}/>
+
 </div> 
 
 <div className="specificationDiv">

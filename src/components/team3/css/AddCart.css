@@ -32,7 +32,7 @@
   }
 
   .addCartDiv1 {
-    border-radius: 80px;
+    border-radius: 20px;
     background: #008CBA;
     padding: 10px;
     width: 200px;
@@ -61,6 +61,25 @@
     font-size: 12px;
   }
 
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 150px;
+    width: 200px;
+    padding-left: 10px;
+}
+
+.saveButton{
+  border-radius: 20px;
+  background: #008CBA;
+  padding: 10px;
+  width: 200px;
+  height: 50px;
+  
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
 
 
   .hideMe {

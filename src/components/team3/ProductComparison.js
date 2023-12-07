@@ -45,7 +45,6 @@ function ProductComparison(props){
         const filteredData = data.filter((item) => item.id !== props.currProd.id);
 
         setRelatedProds( filteredData);
-    //  console.log("Rltd PRODUCTS "+data[0].brand);
         setIsProdCompLoaded(true);
         }
         catch(error){
@@ -57,7 +56,7 @@ function ProductComparison(props){
     useEffect(() => {
         setIsProdCompLoaded(false)
          if(isProdCompLoaded===false) {
-            getRelatedProducts(props.currProd.productCategory)
+            getRelatedProducts(props.currProd.productType)
         }
   }, []);
 
@@ -66,8 +65,6 @@ function ProductComparison(props){
 
     setList(newList);
   }
-
-    //console.log("Rltd PRODUCTS "+relatedProds[0].brand);
 
     if(error){
         return <p style={{color:"red", fontWeight:"bold"}}>Error occured while trying to connect server. Please try again.</p>;
@@ -130,7 +127,7 @@ function ProductComparison(props){
 
                 {props.currProd.inventryStatus==="AVAILABLE"?
 <ProductPrice  price={props.currProd.retailPrice} discount={props.currProd.discount} discountedPrice={props.currProd.discountedPrice} />
-: <h4 style={{color:"red"}}>Not in stock!</h4>}
+: <h4 style={{color:"red"}}>Currently not in stock!</h4>}
                 </td>
 
                 {relatedProds.map((relProd,i)  => {

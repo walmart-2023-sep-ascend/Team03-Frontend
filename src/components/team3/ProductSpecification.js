@@ -7,7 +7,7 @@ function ProductSpecification(props){
         <div>
             <h4>Specification</h4>
         <div className="specText">
-            {props.spec}
+            <pre>{props.spec}</pre>
         </div>
 
         </div>

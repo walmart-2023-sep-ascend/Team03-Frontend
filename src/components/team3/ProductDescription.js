@@ -4,7 +4,7 @@ function ProductDescription(props){
 
     return (
 
-        <div>{props.desc}</div>
+        <div><pre>{props.desc}</pre></div>
 
     )
 

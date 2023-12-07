@@ -97,17 +97,24 @@ catch(error){
     
 
     return (
-        <div>
+        <div className="grid-container">
+        <div className="grid-child">
         <div className={props.disableButton===true?"addCartDiv2":"addCartDiv1"}>
             <button type="button"  className={props.disableButton===true?"addCartButtonDis":"addCartButton"} onClick={()=>{addItemToCart(-1);}} disabled={props.disableButton}>-</button> 
                          &nbsp; {buttonText()} &nbsp;   
             <button type="button"  className={props.disableButton===true?"addCartButtonDis":"addCartButton"}  onClick={()=>{addItemToCart(1);} } disabled={props.disableButton}>+</button>
+
+            
         </div>
 
         {(error!==null)?<div className="hideMe"><p style={{color:"red", fontWeight:"bold", fontSize:"10px"}}>Error while adding to cart</p></div>:' '}
         {(addSuccess===true)?<div className="hideMe"><p style={{color:"green", fontWeight:"bold", fontSize:"10px"}}>Added successfully to cart!</p></div>:' '}
 
         </div>
+        <div className="grid-child">
+        <button type="button"  className="saveButton" >Save for later</button>
+        </div>
+</div>
     )
 
 }

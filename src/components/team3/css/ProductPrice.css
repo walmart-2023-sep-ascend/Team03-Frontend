@@ -1,7 +1,7 @@
 .strikePrice{
     text-decoration: line-through;
     font-style: italic;
-    font-size: 12px;
+    font-size: 20px;
     display: inline-block;
     text-indent: 20px;
     color: grey;
@@ -9,7 +9,7 @@
 
 .retailPrice{
     font-style: normal;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: bold;
     text-indent: 5px;
     color: green;
@@ -29,7 +29,7 @@
 .discount{
     text-indent: 20px;
     color: green;
-    font-size: 13px;
+    font-size: 17px;
     display: inline-block;
 
 }
